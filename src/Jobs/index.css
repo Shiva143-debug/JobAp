@@ -1,0 +1,53 @@
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 50%;
+   
+  }
+  
+  @media (max-width:768px) {
+    .search-input-container {
+      width:70%;
+      margin-left: 50px;
+    }
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add padding to the right for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: black;
+    color:white
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 10px; /* Adjust this value to properly position the icon */
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .profile-filters{
+    display: flex;
+  }
+  .jobCards-container {
+    background-color: black;
+    display: flex;
+  }
+  .retry-button {
+    background-color: blue;
+    color: white;
+  }
+  .profile-filters {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width:768px) {
+    .profile-filters {
+      display: none;
+    }
+  }

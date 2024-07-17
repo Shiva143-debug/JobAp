@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// import { Routes, Route, Navigate } from 'react-router-dom';
+// import './App.css';
+// import LoginForm from './LoginForm';
+// import Home from './Home';
+// import Jobs from './Jobs';
+// import NotFound from './NotFound';
+// import JobItemDetails from './JobItemDetails';
+// import ProtectedRoute from './ProtectedRoute';
 
-function App() {
+// const App = () => (
+//   <Routes>
+//     <Route path="/login" element={<LoginForm />} />
+//     <Route path="/" element={<Home />} />
+//     <Route path="/jobs" element={<Jobs />} />
+//     <Route path="/jobs/:id" element={<JobItemDetails />} />
+//     <Route path="/not-found" element={<NotFound />} />
+//     <Route path="*" element={<Navigate to="/not-found" />} />
+//   </Routes>
+// );
+
+// export default App;
+
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import './App.css';
+import useAuthentication from './useAuthentication';
+import LoginForm from './LoginForm';
+import Home from './Home';
+import Jobs from './Jobs';
+import NotFound from './NotFound';
+import JobItemDetails from './JobItemDetails';
+
+const App = () => {
+  const isAuthenticated = useAuthentication();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/" element={<Home />} />
+      {isAuthenticated ? (
+        <>
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs/:id" element={<JobItemDetails />} />
+         
+   
+        </>
+      ) : (
+        <Route path="/login" element={<LoginForm />} />
+      )}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
-}
+};
 
 export default App;
+
