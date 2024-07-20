@@ -58,7 +58,7 @@ const FiltersGroup = props => {
           key={salary.salaryRangeId}
           onClick={onClickSalary}
         >
-          <input type="radio" id={salary.salaryRangeId} />
+          <input type="radio" id={salary.salaryRangeId} name="salaryRange"/>
           <label className="label" htmlFor={salary.salaryRangeId}>
             {salary.label}
           </label>

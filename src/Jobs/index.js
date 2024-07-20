@@ -295,7 +295,7 @@ const Jobs = () => {
 
     const jwtToken = Cookies.get('jwt_token');
     if (!jwtToken) {
-      navigate('/login', { replace: true });
+      navigate('/', { replace: true });
       return;
     }
 
@@ -353,7 +353,7 @@ const Jobs = () => {
       />
       <h1 className="jobs-failure-heading-text">Oops! Something Went Wrong</h1>
       <p className="jobs-failure-description">
-        We cannot seem to find the page you are looking for
+        Refresh the page when you can't see the page.
       </p>
       <button type="button" className="retry-button" onClick={getJobs}>
         Retry

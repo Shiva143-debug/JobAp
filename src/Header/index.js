@@ -7,12 +7,12 @@ const Header = props => {
   const navigate = useNavigate();
   const onClickLogout = () => {
     Cookies.remove('jwt_token');
-    navigate('/login', { replace: true });
+    navigate('/', { replace: true });
   };
 
   return (
     <div className="Header-container">
-        <Link to="/">
+        <Link to="/home">
           <img
             src="https://assets.ccbp.in/frontend/react-js/logo-img.png "
             alt="website logo"
@@ -21,7 +21,7 @@ const Header = props => {
         </Link>
         <ul className='nav-items'>
           <li className="nav-menu-item">
-            <Link to="/" className="nav-link">
+            <Link to="/home" className="nav-link">
               Home
             </Link>
           </li>

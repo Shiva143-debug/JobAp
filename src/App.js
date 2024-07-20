@@ -36,8 +36,8 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/login" element={<LoginForm />} />
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<LoginForm />} />
+      <Route path="/home" element={<Home />} />
       
       {isAuthenticated ? (
         <>
@@ -47,7 +47,7 @@ const App = () => {
    
         </>
       ) : (
-        <Route path="/login" element={<LoginForm />} />
+        <Route path="/" element={<LoginForm />} />
       )}
       <Route path="*" element={<NotFound />} />
     </Routes>

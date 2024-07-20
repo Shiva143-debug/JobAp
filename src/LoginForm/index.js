@@ -149,7 +149,7 @@ class LoginForm extends Component {
       expires: 30,
       path: '/',
     });
-    navigate('/', { replace: true });
+    navigate('/home', { replace: true });
   };
 
   onSubmitFailure = errorMsg => {
@@ -215,7 +215,7 @@ class LoginForm extends Component {
     const { showSubmitError, errorMsg, isLoading } = this.state;
     const jwtToken = Cookies.get('jwt_token');
     if (jwtToken !== undefined) {
-      return <Navigate to="/" />;
+      return <Navigate to="/home" />;
     }
     return (
       <div className="login-form-container">
