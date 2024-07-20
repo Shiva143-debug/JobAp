@@ -38,6 +38,7 @@ const App = () => {
     <Routes>
       <Route path="/login" element={<LoginForm />} />
       <Route path="/" element={<Home />} />
+      
       {isAuthenticated ? (
         <>
           <Route path="/jobs" element={<Jobs />} />

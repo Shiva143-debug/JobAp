@@ -10,7 +10,7 @@ const JobsCard = props => {
     id,
     employmentType,
     jobDescription,
-    CompanyLogoUrl,
+    companyLogoUrl,
     location,
     packagePerAnnum,
     rating,
@@ -23,7 +23,7 @@ const JobsCard = props => {
       <li className="job-item">
         <div className="job-container">
           <div className="image-title">
-            <img src={CompanyLogoUrl} alt="company logo" className="image" />
+            <img src={companyLogoUrl} alt="company logo" className="image" />
             <div className="title-rating">
               <h1 className="title">{title}</h1>
               <div className="star-rating">

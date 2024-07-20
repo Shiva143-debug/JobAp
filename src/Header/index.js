@@ -1,29 +1,25 @@
-import {Link, withRouter} from 'react-router-dom'
+import { Link, withRouter ,useNavigate} from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 import './index.css'
 
 const Header = props => {
+  const navigate = useNavigate();
   const onClickLogout = () => {
-    const {history} = props
-    Cookies.remove('jwt_token')
-    history.replace('/login')
-  }
+    Cookies.remove('jwt_token');
+    navigate('/login', { replace: true });
+  };
 
   return (
     <div className="Header-container">
-      <div className="Header-container">
-        <ul className="nav-menu">
-          <li>
-            <Link to="/">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/logo-img.png "
-                alt="website logo"
-                className="Header-web-image"
-              />
-            </Link>
-          </li>
-
+        <Link to="/">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png "
+            alt="website logo"
+            className="Header-web-image"
+          />
+        </Link>
+        <ul className='nav-items'>
           <li className="nav-menu-item">
             <Link to="/" className="nav-link">
               Home
@@ -43,8 +39,8 @@ const Header = props => {
         >
           Logout
         </button>
-      </div>
-    </div>
+
+    </div >
   )
 }
 
