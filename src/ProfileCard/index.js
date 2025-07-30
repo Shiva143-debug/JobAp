@@ -1,5 +1,5 @@
 import './index.css'
-import {Component} from 'react'
+import { Component } from 'react'
 import Cookies from 'js-cookie'
 import * as Loader from 'react-loader-spinner'
 // import {withRouter} from 'react-router-dom'
@@ -13,7 +13,7 @@ const apiStatusConstants = {
 
 class ProfileCard extends Component {
   // const {employmentTypesList,salaryRangesList}=props
-  state = {profileList: {}}
+  state = { profileList: {} }
 
   componentDidMount() {
     this.getProfile()
@@ -54,15 +54,17 @@ class ProfileCard extends Component {
   }
 
   renderProfileCard = () => {
-    const {profileList} = this.state
-    const {name, profileImageUrl, shortBio} = profileList
+    const { profileList } = this.state
+    const { name, profileImageUrl, shortBio } = profileList
     console.log(name)
     console.log(profileList)
     return (
       <div className="profileCardContainer">
-        <img src={profileImageUrl} alt="profile" />
-        <h1 className="name">Shiva</h1>
-        <p className="shortBio">Full stack Developer</p>
+        <img src="https://res.cloudinary.com/dxgbxchqm/image/upload/v1718454904/Screenshot_20240330-102030_b65ec2.png" alt="profile" style={{width:"60px",height:"60px",borderRadius:"50%"}}/>
+        <div>
+          <h1 className="name">Shiva</h1>
+          <p className="shortBio">Full stack Developer</p>
+        </div>
       </div>
     )
   }
@@ -80,7 +82,7 @@ class ProfileCard extends Component {
   )
 
   renderProfileCardsView = () => {
-    const {apiStatus} = this.state
+    const { apiStatus } = this.state
 
     switch (apiStatus) {
       case apiStatusConstants.success:

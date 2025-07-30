@@ -407,7 +407,7 @@ const Jobs = () => {
   };
 
   return (
-    <div>
+    <div className="jobs-page-container">
       <Header />
       <div className="jobCards-container">
         <div className="profile-filters">
@@ -419,25 +419,39 @@ const Jobs = () => {
             changeEmployeeList={changeEmployeeList}
           />
         </div>
-        <div>
-          <div className="search-input-container">
-            <input
-              value={searchInput}
-              type="search"
-              className="search-input"
-              placeholder="Search"
-              onChange={onChangeSearchInput}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') getJobs();
-              }}
-            />
-            <BsSearch
-              className="search-icon"
-              onClick={onClickIcon}
-              data-testid="searchButton"
-            />
+        <div className="jobs-main-content">
+          <div className="search-section">
+            <div className="search-input-container">
+              <input
+                value={searchInput}
+                type="search"
+                className="search-input"
+                placeholder="Search jobs, companies, or skills..."
+                onChange={onChangeSearchInput}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') getJobs();
+                }}
+              />
+              <BsSearch
+                className="search-icon"
+                onClick={onClickIcon}
+                data-testid="searchButton"
+              />
+            </div>
           </div>
-          {renderAllJobs()}
+          <div className="jobs-content-area">
+            <div className="jobs-header">
+              <span className="jobs-count">
+                {jobsList.length > 0 ? `${jobsList.length} jobs found` : ''}
+              </span>
+              <div className="sort-options">
+                <button className="sort-btn active">Most Recent</button>
+                <button className="sort-btn">Most Relevant</button>
+                <button className="sort-btn">Salary</button>
+              </div>
+            </div>
+            {renderAllJobs()}
+          </div>
         </div>
       </div>
     </div>

@@ -1,67 +1,275 @@
-.Header-container {
-    background-color: #272727;
-    display: flex;
-    width:98vw;
-    justify-content: space-between;
-    margin: 2px;
-  }
-  
-  @media (max-width: 768px) {
-    .Header-container {
-      width: 100vw;
-      flex-direction: flex;
-      align-items: flex-start;
-    }
-  
-  }
-  .nav-menu {
-    display: flex; 
-    padding: 10px;
-    list-style-type: none;
-  }
-  
-  .nav-link {
-    color: white;
-    padding-right: 50px;
-    text-decoration: none;
-  }
-  
-  .logout-desktop-btn {
-    font-family: 'Roboto';
-    font-weight: 600;
-    font-size: 10px;
-    color: #ffffff;
-    background-color: #0967d2;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-    width: 100px;
-    height: 50px;
-    margin-right: 20px;
-   
-  }
-  
-  @media (max-width: 768px) {
-    .logout-desktop-btn {
-     
-      margin-right: 20px;
-    }
-  }
-  .Header-web-image {
-    width:100px;
-    height: 50px;
-    margin-left: 10px
-  }
-  
-  @media (max-width: 768px) {
-    .Header-web-image {
-      width:100px;
-      margin-left: 10px;
-    }
+/* Modern Header Styles */
+.header-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 10vh;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 70px;
+}
+
+/* Logo Styles */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo {
+  width: 120px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #4f9cf9;
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4f9cf9, #0967d2);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: linear-gradient(135deg, #0967d2 0%, #4f9cf9 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(9, 103, 210, 0.3);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #0856b8 0%, #3d8ae6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(9, 103, 210, 0.4);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #4f9cf9;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 280px;
+  height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  backdrop-filter: blur(10px);
+  transition: right 0.3s ease;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-open {
+  right: 0;
+}
+
+.mobile-nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-item {
+  padding: 0 1.5rem;
+}
+
+.mobile-nav-link,
+.mobile-logout-btn {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-link:hover,
+.mobile-logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #4f9cf9;
+  transform: translateX(10px);
+}
+
+.mobile-logout-btn {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #0967d2 0%, #4f9cf9 100%);
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+}
+
+.mobile-logout-btn:hover {
+  background: linear-gradient(135deg, #0856b8 0%, #3d8ae6 100%);
+  transform: translateX(0) scale(1.02);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
   }
 
-  .nav-items{
-    display: flex;
-    list-style-type: none;
+  .desktop-nav,
+  .logout-btn {
+    display: none;
   }
+
+  .mobile-menu-btn,
+  .mobile-nav,
+  .mobile-menu-overlay {
+    display: block;
+  }
+
+  .header-logo {
+    width: 100px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 0.75rem;
+    height: 60px;
+  }
+
+  .mobile-nav {
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 100%;
+  }
+
+  .mobile-menu-overlay {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .header-logo {
+    width: 90px;
+    height: 30px;
+  }
+}
+
+/* Animation for smooth transitions */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mobile-nav-open {
+  animation: slideInRight 0.3s ease-out;
+}

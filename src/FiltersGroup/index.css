@@ -12,3 +12,12 @@
     padding-left: 30px;
   }
   
+  .employee-item{
+    list-style-type: none;
+  }
+  .category-item{
+    list-style-type: none;
+  }
+  .categories-list{
+    margin-left: -10px;
+  }

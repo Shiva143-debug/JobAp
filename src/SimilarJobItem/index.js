@@ -21,8 +21,8 @@ const SimilarJobItem = props => {
           className="image"
         />
         <div className="title-rating">
-          <h1 className="title">{title}</h1>
-          <div className="star-rating">
+          <h3 style={{color: '#ffffff'}}>{title}</h3>
+          <div className="star-rating-sm">
             <GiRoundStar className="star" />
             <p>{rating}</p>
           </div>
@@ -31,7 +31,7 @@ const SimilarJobItem = props => {
       <h1 className="description">Description</h1>
       <p className="job-description">{jobDescription}</p>
       <div className="location-employType">
-        <p className="location">{location}</p>
+        <p >{location}</p>
         <p>{employmentType}</p>
       </div>
     </div>

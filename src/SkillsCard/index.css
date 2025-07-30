@@ -1,20 +1,23 @@
 .s-image {
-    width: 30px;
-    margin-right: 10px;
-  }
-  .h-head {
-    color: white;
-    font-size: 16px;
-  }
+  width: 100%;
+  margin-right: 10px;
+}
+
+.h-head {
+  color: white;
+  font-size: 16px;
+}
+
+.s-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  margin-right: 120px;
+}
+
+@media (max-width:768px) {
   .s-container {
     display: flex;
-    margin: 20px;
-    margin-right: 120px;
+    flex-wrap: wrap;
   }
-  
-  @media (max-width:768px) {
-    .s-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
+}

@@ -3,8 +3,7 @@
     width: 300px;
     margin: 5px;
     border-radius: 8px;
-     padding: 5px;
-    
+    padding: 10px;
   }
   .description {
     color: white;
@@ -17,13 +16,17 @@
   }
   .location-employType {
     display: flex;
+    justify-content: space-between;
     color: white;
   }
   .location {
     padding-right: 10px;
   }
-  .star-rating{
-    margin-top: -20px;
+  .star-rating-sm{
+    margin-top: -30px;
+    display: flex;
+    align-items: center;
+    color: white;
   }
   /* .star{
     padding-top:50px;

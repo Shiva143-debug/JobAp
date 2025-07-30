@@ -18,37 +18,48 @@ const JobsCard = props => {
   } = jobsListDetails
 
   return (
-    //   Wrap with Link from react-router-dom
-    <Link to={`/jobs/${id}`}>
-      <li className="job-item">
+    <li className="job-item">
+      <Link to={`/jobs/${id}`}>
         <div className="job-container">
-          <div className="image-title">
+          <div className="image-title" style={{display: 'flex',}}>
+         
             <img src={companyLogoUrl} alt="company logo" className="image" />
+         
             <div className="title-rating">
-              <h1 className="title">{title}</h1>
+              <h2 className="title">{title}</h2>
               <div className="star-rating">
                 <GiRoundStar className="star" />
                 <p>{rating}</p>
               </div>
             </div>
           </div>
+          
           <div className="location-employmentType-package">
             <div className="location-employmentType">
-              <MdLocationOn className="location-img" />
-              <p className="location">{location}</p>
-              <BsFillBriefcaseFill className="briefCaseImg" />
-              <p className="employmentType">{employmentType}</p>
+              <div className="location-item">
+                <MdLocationOn className="location-img" />
+                <p className="location">{location}</p>
+              </div>
+              <div className="employment-item">
+                <BsFillBriefcaseFill className="briefCaseImg" />
+                <p className="employmentType">{employmentType}</p>
+              </div>
             </div>
             <p className="packagePerAnnum">{packagePerAnnum}</p>
           </div>
 
           <hr className="hr" />
 
-          <h1 className="Description">Description</h1>
+          <h3 className="Description">Description</h3>
           <p className="jobDescription">{jobDescription}</p>
+          
+          {/* <div className="job-tags">
+            <span className="job-tag">{employmentType}</span>
+            <span className="job-tag">Remote Friendly</span>
+          </div> */}
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   )
 }
 export default JobsCard
